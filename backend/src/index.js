@@ -18,7 +18,8 @@ const __dirname = path.resolve();
 
 const CLIENT_URL = process.env.CLIENT_URL || "http://localhost:5173";
 
-app.use(express.json());
+app.use(express.json({ limit: '10mb' })); // or higher if needed
+app.use(express.urlencoded({ limit: '10mb', extended: true }));
 app.use(cookieParser());
 app.use(
   cors({
