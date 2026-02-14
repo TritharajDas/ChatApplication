@@ -22,7 +22,7 @@ const App = () => {
 
   useEffect(() => {
     checkAuth();
-  }, [checkAuth]);
+  }, []); // ✅ FIXED - empty dependency array
 
   console.log({ authUser });
 
