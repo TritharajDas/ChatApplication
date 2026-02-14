@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/TritharajDas/ChatApp/issues"
   },
-  "homepage": "https://github.com/TritharajDas/ChatApp#readme"
+  "homepage": "https://github.com/TritharajDas/ChatApp#readme",
+  "engines": {
+    "node": "20.x"
+  }
 }
