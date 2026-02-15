@@ -18,13 +18,16 @@ const __dirname = path.resolve();
 
 const CLIENT_URL = process.env.CLIENT_URL || "http://localhost:5173";
 
+app.set("trust proxy", 1);
+
 app.use(express.json({ limit: '10mb' })); // or higher if needed
 app.use(express.urlencoded({ limit: '10mb', extended: true }));
 app.use(cookieParser());
 app.use(
   cors({
-    origin: CLIENT_URL,
+    origin: [CLIENT_URL],
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
 
