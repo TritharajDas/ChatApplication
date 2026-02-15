@@ -5,12 +5,13 @@ export const generateToken = (userId, res) => {
     expiresIn: '30d',
   });
 
-  res.cookie('jwt', token, {
-    httpOnly: true, // more secure
-    maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: 'none', // CSRF protection
+  res.cookie("jwt", token, {
+    httpOnly: true,
+    secure: true,
+    sameSite: "none",
+    maxAge: 30 * 24 * 60 * 60 * 1000,
+    path: "/",
   });
-
+  
   return token;
 };
